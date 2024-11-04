@@ -1,0 +1,80 @@
+﻿<Window x:Class="PKG_Lab6.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:helix="http://helix-toolkit.org/wpf"
+        xmlns:local="clr-namespace:PKG_Lab6"
+        xmlns:oxy="http://oxyplot.org/wpf"
+        mc:Ignorable="d"
+        Title="Lab6" Height="450" Width="800">
+    <Grid>
+    <Grid.RowDefinitions>
+        <RowDefinition></RowDefinition>
+        <RowDefinition></RowDefinition>
+        <RowDefinition></RowDefinition>
+        <RowDefinition></RowDefinition>
+        <RowDefinition></RowDefinition>
+        <RowDefinition></RowDefinition>
+        <RowDefinition></RowDefinition>
+        <RowDefinition></RowDefinition>
+        <RowDefinition></RowDefinition>
+        <RowDefinition></RowDefinition>
+        <RowDefinition></RowDefinition>
+        <RowDefinition></RowDefinition>
+        <RowDefinition></RowDefinition>
+        <RowDefinition></RowDefinition>
+        <RowDefinition></RowDefinition>
+        <RowDefinition></RowDefinition>
+        <RowDefinition></RowDefinition>
+        <RowDefinition></RowDefinition>
+        <RowDefinition></RowDefinition>
+        <RowDefinition></RowDefinition>
+    </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <helix:HelixViewport3D x:Name="helixViewport" ShowCoordinateSystem="True" DisplayMemberPath="" Grid.Column="5" Grid.Row="0" Grid.ColumnSpan="15" Grid.RowSpan="20">
+            <helix:DefaultLights />
+        </helix:HelixViewport3D>
+        <Button Click="LoadModel_Click" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" Grid.RowSpan="1" FontSize="15">Загрузить OBJ</Button>
+        <TextBlock Text="Введите значение для преобразования:" TextWrapping="Wrap" FontSize="18" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5" Grid.RowSpan="1"/>
+        <TextBox x:Name="TransformValueX" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="1" FontSize="18"/>
+        <TextBox x:Name="TransformValueY" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="1" FontSize="18"/>
+        <TextBox x:Name="TransformValueZ" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3" Grid.RowSpan="1" FontSize="18"/>
+        <TextBlock Text="(для масштаба: 0.1 - 5.0, для переноса: -10.0 - 10.0, для вращения: 0 - 360)" TextWrapping="Wrap" FontStyle="Italic"  Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="5" Grid.RowSpan="2" FontSize="10"/>
+        <Button Click="Scale_Click" Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="5" Grid.RowSpan="1" FontSize="15">Масштабировать</Button>
+        <Button Click="Translate_Click" Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="5" Grid.RowSpan="1" FontSize="15">Перенести</Button>
+        <Button Click="Rotate_Click" Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="5" Grid.RowSpan="1" FontSize="15">Вращение</Button>
+        <Button Click="CreateProjectionsButton_Click" Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="5" Grid.RowSpan="1" FontSize="15">Создать проекции</Button>
+        <TextBlock Text="Итоговая матрица преобразования:" TextWrapping="Wrap" FontSize="18" Grid.Column="0" Grid.Row="11" Grid.ColumnSpan="5" Grid.RowSpan="2"/>
+        <TextBlock x:Name="MatrixOutput" Grid.Column="0" Grid.Row="13" Grid.ColumnSpan="5" Grid.RowSpan="4" TextWrapping="Wrap" FontSize="18"/>
+        <oxy:PlotView x:Name="xyPlot" Grid.Column="20" Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="5"/>
+        <oxy:PlotView x:Name="xzPlot" Grid.Column="20" Grid.Row="7" Grid.ColumnSpan="4" Grid.RowSpan="5"/>
+        <oxy:PlotView x:Name="yzPlot" Grid.Column="20" Grid.Row="13" Grid.ColumnSpan="4" Grid.RowSpan="5"/>
+    </Grid>
+</Window>
